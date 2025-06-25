@@ -25,7 +25,7 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-file(GLOB TEST_SOURCES "tests/*.cpp")  # Needs at least CMake 3.12, I think
+file(GLOB TEST_SOURCES CONFIGURE_DEPENDS "tests/*.cpp")  # Needs at least CMake 3.12, I think
 
 add_executable( tests ${TEST_SOURCES})
 target_link_libraries(
