@@ -11,3 +11,11 @@ This directory contains crypto helpers for use in Port. This directory will even
 1. tests: tests that are meant to run on a developer's pc, not a production device. Used to assert that crypto helpers work as expected, not that transpiling succeeds
 1. CMakeLists.txt: used for compiling and running tests during development
 1. build: contents ignored by git
+
+## Running tests
+```bash
+cd shared/build
+cmake ..
+make
+./tests
+```
