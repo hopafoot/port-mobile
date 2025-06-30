@@ -1,8 +1,8 @@
-#include "ed25519.h"
+#include "ed25519.hpp"
 
 #include <vector>
 #include <openssl/evp.h>
-#include <encoders.h>
+#include <encoders.hpp>
 
 std::string ed25519::generate_keys_json()
 {

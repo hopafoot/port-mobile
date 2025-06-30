@@ -1,4 +1,7 @@
 #pragma once
+/**
+ * GoogleTest helpers to compare vectors
+ */
 
 #define ASSERT_VEC_EQ(x, y)                               \
   do                                                      \

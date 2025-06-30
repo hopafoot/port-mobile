@@ -40,11 +40,15 @@ namespace facebook::react
   }
   std::string NativeCryptoModule::generateX25519Keypair(jsi::Runtime &rt)
   {
-    return x25519::generate_keypair_json();
+    auto keypair = x25519::generate_keypair_json();
+    return keypair->to_json();
   }
   std::string NativeCryptoModule::deriveX25519Secret(jsi::Runtime &rt, std::string private_key, std::string public_key)
   {
-    return x25519::derive_secret(private_key, public_key);
+    // Convert the shared secret to a hex string
+
+    auto ss = x25519::derive_secret(encoders::hex_to_binary(private_key), encoders::hex_to_binary(public_key));
+    return encoders::binary_to_hex(shared_secret.data(), shared_secret_len);
   }
   std::string NativeCryptoModule::aes256Encrypt(jsi::Runtime &rt, std::string plaintext, std::string secret)
   {

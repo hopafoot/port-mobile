@@ -15,7 +15,7 @@ This directory contains crypto helpers for use in Port. This directory will even
 ## Running tests
 ```bash
 cd shared/build
-cmake ..
+CXX=g++ cmake ..
 make
 ./tests
 ```
