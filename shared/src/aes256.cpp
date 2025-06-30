@@ -43,9 +43,12 @@ std::string aes256::encrypt(std::string &plaintext, std::string &key_hex)
 {
   // Convert hex keys to binary
   std::vector<unsigned char> key = encoders::hex_to_binary(key_hex);
+  // Format of the output is | IV | ciphertext |
+  std::vector<unsigned char> out_buf(16 + plaintext.size() + EVP_MAX_BLOCK_LENGTH, 0);
+  auto iv = out_buf.data();
+  auto ciphertext = out_buf.data() + 16;
   // Generate a random IV
-  std::string iv(16, '\0'); // AES block size is 16 bytes
-  if (RAND_bytes(reinterpret_cast<unsigned char *>(&iv[0]), 16) != 1)
+  if (RAND_bytes(iv, 16) != 1)
   {
     // Handle the error
     throw std::runtime_error(
@@ -60,17 +63,15 @@ std::string aes256::encrypt(std::string &plaintext, std::string &key_hex)
   if (1 !=
       EVP_EncryptInit_ex(ctx, EVP_aes_256_cbc(), NULL,
                          reinterpret_cast<const unsigned char *>(key.data()),
-                         reinterpret_cast<const unsigned char *>(iv.data())))
+                         iv))
   {
     EVP_CIPHER_CTX_free(ctx);
     throw std::runtime_error("Failed to initialize encryption");
   }
 
-  std::string ciphertext;
-  ciphertext.resize(plaintext.size() + EVP_MAX_BLOCK_LENGTH);
   int len;
   if (1 != EVP_EncryptUpdate(
-               ctx, reinterpret_cast<unsigned char *>(&ciphertext[0]), &len,
+               ctx, ciphertext, &len,
                reinterpret_cast<const unsigned char *>(plaintext.data()),
                plaintext.size()))
   {
@@ -80,39 +81,35 @@ std::string aes256::encrypt(std::string &plaintext, std::string &key_hex)
 
   if (1 !=
       EVP_EncryptFinal_ex(
-          ctx, reinterpret_cast<unsigned char *>(&ciphertext[0]) + len, &len))
+          ctx, ciphertext + len, &len))
   {
     EVP_CIPHER_CTX_free(ctx);
     throw std::runtime_error("Failed to finalize encryption");
   }
   ciphertext_len += len;
-  ciphertext.resize(ciphertext_len);
+  out_buf.resize(16 + ciphertext_len);
 
   EVP_CIPHER_CTX_free(ctx);
-  // Prepend the IV to the ciphertext
-  std::string iv_ciphertext = iv + ciphertext;
   // base 64 encode the encrypted bytes
-  std::string iv_ciphertext_b64 = encoders::base64_encode(iv_ciphertext);
+  std::string iv_ciphertext_b64 = encoders::base64_encode(out_buf);
   return iv_ciphertext_b64;
 }
 
-std::string aes256::decrypt(std::string &ciphertext, std::string &key_hex)
+std::string aes256::decrypt(std::string &ciphertext_b64, std::string &key_hex)
 {
   try
   {
     // Convert hex keys to binary
     std::vector<unsigned char> key = encoders::hex_to_binary(key_hex);
     // convert b64 to binary
-    std::string iv_ciphertext = encoders::base64_decode(ciphertext);
+    std::vector<unsigned char> iv_ciphertext = encoders::base64_decode(ciphertext_b64);
     if (iv_ciphertext.size() < 16)
     {
       throw std::runtime_error(
-          "The received message is too short to contain an IV and ciphertext");
+          "The received message is too short to contain an IV, let alone a ciphertext");
     }
-    std::string iv =
-        iv_ciphertext.substr(0, 16); // Extract the first 16 bytes as the IV
-    std::string ciphertext =
-        iv_ciphertext.substr(16); // The rest is the ciphertext
+    unsigned char *iv = iv_ciphertext.data();                  // IV is at the head
+    unsigned char *ciphertext_buf = iv_ciphertext.data() + 16; // IV is  16 bytes, the rest is ciphertext
 
     EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
     if (!ctx)
@@ -122,20 +119,20 @@ std::string aes256::decrypt(std::string &ciphertext, std::string &key_hex)
 
     if (1 != EVP_DecryptInit_ex(
                  ctx, EVP_aes_256_cbc(), NULL,
-                 reinterpret_cast<const unsigned char *>(key.data()),
-                 reinterpret_cast<const unsigned char *>(iv.data())))
+                 key.data(),
+                 iv))
     {
       EVP_CIPHER_CTX_free(ctx);
       throw std::runtime_error("Failed to initialize decryption");
     }
 
     std::string plaintext;
-    plaintext.resize(ciphertext.size());
+    plaintext.resize(iv_ciphertext.size() - 16);
     int len;
     if (1 != EVP_DecryptUpdate(
                  ctx, reinterpret_cast<unsigned char *>(&plaintext[0]), &len,
-                 reinterpret_cast<const unsigned char *>(ciphertext.data()),
-                 ciphertext.size()))
+                 ciphertext_buf,
+                 plaintext.size()))
     {
       EVP_CIPHER_CTX_free(ctx);
       throw std::runtime_error("Failed to decrypt");

@@ -72,7 +72,6 @@ aesgcm::data aesgcm::decrypt(key secret, unsigned char *iv_buf, unsigned char *t
 {
   EVP_CIPHER_CTX *ctx;
   int len;
-  int plaintext_len;
 
   /* Create and initialise the context */
   if (!(ctx = EVP_CIPHER_CTX_new()))
@@ -105,7 +104,7 @@ aesgcm::data aesgcm::decrypt(key secret, unsigned char *iv_buf, unsigned char *t
     EVP_CIPHER_CTX_free(ctx);
     throw std::runtime_error("Could not set ciphertext");
   }
-  plaintext_len = len;
+  // At this point, it's probably a good idea to ensure that plaintext length matches
 
   // Set expected tag value.
   if (!EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, aesgcm::TAG_LENGTH, tag_buf))
