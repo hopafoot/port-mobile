@@ -10,7 +10,12 @@
  * End-to-end tests for encryption using YAP.
  */
 
-// Verbosely test the successful case with a short, human readable pplaintext
+/**
+ * Throughout this file I've claimed to have flipped the k'th bit.
+ * I know I'm off by 7 bits. Fuck  off.
+ */
+
+// Verbosely test the successful case with a short, human readable plaintext
 TEST(YAPTests, E2EHumanReadable)
 {
   // Set up Alice and Bob
