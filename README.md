@@ -1,8 +1,9 @@
 # Port, by Numberless
-Port is a communication app that emphasises consent. Building upon the concept of a "Port", it aims to
-give users a way to connect in a manner where they control how much access they give up.
+Port is a communication app that supports end-to-end encrypted direct chats, group chats and calling with an emphasis on user consent. Port replaces traditional permanent handles like phone numbers, usernames and email addresses with "Ports", allowing users to connect with peers without sharing any sensitive, permanent and personally identifying data. Using Ports you can decide how much access you grant others, from whether they're allowed to call you to if they can connect you with new people.
 
-Port is currently built for iOS and Android using react-native. This repository contains the source code for the apps. You can download Port [here for Android](https://play.google.com/store/apps/details?id=tech.numberless.port) or [here for iOS](https://apps.apple.com/ca/app/port-messenger/id6473122668)
+Port is currently built for iOS and Android using react-native. This repository contains the source code for the apps. You can download Port [here for Android](https://play.google.com/store/apps/details?id=tech.numberless.port) or [here for iOS](https://apps.apple.com/ca/app/port-messenger/id6473122668).
+
+Check out [our site](https://portmessenger.com/) to learn more about why we believe Port needs to exist.
 
 ## Environment setup
 Port is a react-native app. To set up your environment for React Native development, follow their guide over on [their documentation](https://reactnative.dev/docs/0.78/environment-setup).
