@@ -6,6 +6,7 @@ import NativeCallHelperModule, {
   AcceptEventPayload,
   EndEventPayload,
 } from '@specs/NativeCallHelperModule';
+import {isIOS} from '@components/ComponentUtils';
 
 export function createCallId() {
   return uuid.v4().toString();
@@ -20,6 +21,12 @@ export async function setUpCallStateListeners(
   acceptanceCallback: (callId: string) => void,
   endCallback: (callId: string) => void,
 ) {
+  // There appears to be a bug in react-native causing the app to crash
+  // on some Android devices when setting event listeners.
+  // Since these are not needed at all, we might as well not set them up.
+  if (!isIOS) {
+    return;
+  }
   NativeCallHelperModule.onAccept((event: AcceptEventPayload) => {
     acceptanceCallback(event.callUUID);
   });
