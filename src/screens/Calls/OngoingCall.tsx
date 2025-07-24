@@ -17,7 +17,7 @@ import {SvgProps} from 'react-native-svg';
 import {MediaStream} from 'react-native-webrtc';
 import {useSelector} from 'react-redux';
 
-import {isIOS, PortSpacing, screen} from '@components/ComponentUtils';
+import {PortSpacing, isIOS, screen} from '@components/ComponentUtils';
 import {CustomStatusBar} from '@components/CustomStatusBar';
 import DynamicColors from '@components/DynamicColors';
 import {

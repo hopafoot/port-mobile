@@ -1,12 +1,13 @@
 import uuid from 'react-native-uuid';
 
+import {isIOS} from '@components/ComponentUtils';
+
 import DirectChat from '@utils/DirectChats/DirectChat';
 
 import NativeCallHelperModule, {
   AcceptEventPayload,
   EndEventPayload,
 } from '@specs/NativeCallHelperModule';
-import {isIOS} from '@components/ComponentUtils';
 
 export function createCallId() {
   return uuid.v4().toString();
