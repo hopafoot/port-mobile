@@ -22,7 +22,7 @@
 
 
 /**
- Deletes all Keychain items accessible by this app if this is the first time the user launches the app
+ Deletes all Keychain items  accessible by this app if this is the first time the user launches the app
  */
 static void ClearKeychainIfNecessary() {
   // Checks wether or not this is the first time the app is run
