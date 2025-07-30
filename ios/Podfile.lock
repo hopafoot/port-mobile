@@ -1815,7 +1815,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-compressor (1.11.0):
+  - react-native-compressor (1.12.0):
     - boost
     - DoubleConversion
     - fast_float
@@ -3752,7 +3752,7 @@ SPEC CHECKSUMS:
   react-native-blob-util: 72c84b29a72e2d25b5c49600fa57bc7085513ff1
   react-native-cameraroll: 8c3ba9b6f511cf645778de19d5039b61d922fdfb
   react-native-cloud-storage: 9ab15771b6680b968f8dac6c37c0f57f28d872fd
-  react-native-compressor: f8b94fe2931a62433f881d9e6b2ac83cd419df41
+  react-native-compressor: e993b00adf26484fe40a33c008e0d2a403391536
   react-native-contacts: 5550dd2479ed1256eba25790e0d03044395c0a97
   react-native-create-thumbnail: 733160dca9a548262e1030e7fcdae90a93d203ca
   react-native-document-picker: d79028d796703c0202689ac25172b4867c937c64

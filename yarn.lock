@@ -10036,10 +10036,10 @@ react-native-cloud-storage@^2.2.2:
   resolved "https://registry.yarnpkg.com/react-native-cloud-storage/-/react-native-cloud-storage-2.2.2.tgz#2820e1602714928df5a1ce237487846c1eda8297"
   integrity sha512-kf1fNcnUlUIrJ+Gas2QndY2sXs+jqROSYY5x10quV9FgemZ6MP3UluEMoZXl7ewHRb0dY8DEVjTZIsvhN3pbfg==
 
-react-native-compressor@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/react-native-compressor/-/react-native-compressor-1.11.0.tgz#e297fa650b09cc754392153c38ae2ca510aee024"
-  integrity sha512-XaI0U2CtlW6ZYjwdQ4jdpnJa3C9CD1pc1a4jiUMtnUxWtCqgT7PNjOiEqlYLLwwGTvorXXNuby5In1yy7Vdmhg==
+react-native-compressor@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/react-native-compressor/-/react-native-compressor-1.12.0.tgz#4c387f100ec6d98adbee10c22496d0e42397d8bf"
+  integrity sha512-NMAYpXnTLwx/KecwlLF+9Dnrn/tKV5UVfta8Lk9eROsb05JYnUoKLprRzSSpHcyLjIdQAVaTtx2lPYsappMezw==
 
 react-native-contacts@^8.0.4:
   version "8.0.4"
@@ -10137,10 +10137,10 @@ react-native-opengraph-kit@^3.0.1:
     html-entities "~1.2.0"
     lodash.debounce "~4.0.8"
 
-react-native-pager-view@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.7.0.tgz#88f2520e85f07ce55f3f56c57d6637249a215160"
-  integrity sha512-sutxKiMqBuQrEyt4mLaLNzy8taIC7IuYpxfcwQBXfSYBSSpAa0qE9G1FXlP/iXqTSlFgBXyK7BESsl9umOjECQ==
+react-native-pager-view@^6.8.1:
+  version "6.8.1"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.8.1.tgz#fa0ec09ea7c44190c7c013d75dd09fdc17b96100"
+  integrity sha512-XIyVEMhwq7sZqM7GobOJZXxFCfdFgVNq/CFB2rZIRNRSVPJqE1k1fsc8xfQKfdzsp6Rpt6I7VOIvhmP7/YHdVg==
 
 react-native-pdf@^6.7.7:
   version "6.7.7"
@@ -10188,12 +10188,13 @@ react-native-safe-area-context@^5.3.0:
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.3.0.tgz#272e6786a58aafe3362fde4d3233713b66158179"
   integrity sha512-glV9bwuozTjf/JDBIBm+ITnukHNaUT3nucgdeADwjtHsfEN3RL5UO6nq99vvdWv5j/O9yCZBvFncM1BBQ+UvpQ==
 
-react-native-screens@^4.10.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-4.10.0.tgz#40634aead590c6b7034ded6a9f92465d1d611906"
-  integrity sha512-Tw21NGuXm3PbiUGtZd0AnXirUixaAbPXDjNR0baBH7/WJDaDTTELLcQ7QRXuqAWbmr/EVCrKj1348ei1KFIr8A==
+react-native-screens@^4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-4.13.1.tgz#bf19f09b76dee90b5f7bd8aab3c951a565dd111d"
+  integrity sha512-EESsMAtyzYcL3gpAI2NKKiIo+Ew0fnX4P4b3Zy/+MTc6SJIo3foJbZwdIWd/SUBswOf7IYCvWBppg+D8tbwnsw==
   dependencies:
     react-freeze "^1.0.0"
+    react-native-is-edge-to-edge "^1.2.1"
     warn-once "^0.1.0"
 
 react-native-share@^12.0.9:
@@ -10258,10 +10259,10 @@ react-native-video-player@^0.16.2:
   resolved "https://registry.yarnpkg.com/react-native-video-player/-/react-native-video-player-0.16.2.tgz#526f241191e0802ace03c9bd27222e692a01b8cf"
   integrity sha512-BycfflDEeSLtTBPCsBSz0bANJJQNCvFyNhipP4kRKc1gVjw3DyJjxV7YZj4HSzeXtC8/82l57q6ziStMBzkrFQ==
 
-react-native-video@^6.12.0:
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-6.12.0.tgz#f65285f1da063869dd332dbb34f8b64a247d3fb5"
-  integrity sha512-MPiOk/8qszBY2zAZZuuzyNPcRK6+UFHutzRcEJlGodZ5GCUNmw1vIE6FCInL22S/YpnGywwiKVQDQCjjqQx9Fg==
+react-native-video@^6.16.1:
+  version "6.16.1"
+  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-6.16.1.tgz#c4f5f71eac930a4ae4e2faadb22fc05d78b9b7fe"
+  integrity sha512-+G6tVVGbwFqNTyPivqb+PhQzWr5OudDQ1dgvBNyBRAgcS8rOcbwuS6oX+m8cxOsXHn1UT9ofQnjQEwkGOsvomg==
 
 react-native-view-shot@^4.0.3:
   version "4.0.3"
