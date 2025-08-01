@@ -1968,7 +1968,7 @@ PODS:
     - Yoga
   - react-native-netinfo (11.3.1):
     - React-Core
-  - react-native-pager-view (6.7.0):
+  - react-native-pager-view (6.8.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -2120,7 +2120,7 @@ PODS:
     - Yoga
   - react-native-sqlite-storage (6.0.1):
     - React-Core
-  - react-native-video (6.12.0):
+  - react-native-video (6.16.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -2139,7 +2139,7 @@ PODS:
     - React-hermes
     - React-ImageManager
     - React-jsi
-    - react-native-video/Video (= 6.12.0)
+    - react-native-video/Video (= 6.16.1)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-renderercss
@@ -2150,7 +2150,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-video/Fabric (6.12.0):
+  - react-native-video/Fabric (6.16.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -2179,7 +2179,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-video/Video (6.12.0):
+  - react-native-video/Video (6.16.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -3008,7 +3008,7 @@ PODS:
     - RNWorklets
     - SocketRocket
     - Yoga
-  - RNScreens (4.10.0):
+  - RNScreens (4.13.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -3036,10 +3036,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNScreens/common (= 4.10.0)
+    - RNScreens/common (= 4.13.1)
     - SocketRocket
     - Yoga
-  - RNScreens/common (4.10.0):
+  - RNScreens/common (4.13.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -3760,12 +3760,12 @@ SPEC CHECKSUMS:
   react-native-image-picker: 9bceb747cd6cde22a3416ffdc819d11b5b11f156
   react-native-image-resizer: bc50c33e359ac9a5702b912320d4d1175c5d4294
   react-native-netinfo: 2e3c27627db7d49ba412bfab25834e679db41e21
-  react-native-pager-view: ef1649c24e8245a70d36d981a041273c2a796447
+  react-native-pager-view: 14b164735478c7f04a7ee14f544b3fb3218b080e
   react-native-pdf: 1f8fca776972ffa414dc0e4486b392a18f26811c
   react-native-receive-sharing-intent: cbd6daac89f5e84c231fe0d8e5453490cc431193
   react-native-safe-area-context: f5e2491bf7f2bb06ce907cb0a47f7b585b8db872
   react-native-sqlite-storage: 0c84826214baaa498796c7e46a5ccc9a82e114ed
-  react-native-video: 91c15d9c9876e78bd5658e3529a6926a7fe0bcea
+  react-native-video: 4da16bfca01a02aa2095e40683d74f2d6563207c
   react-native-view-shot: 2a3fb8aadfc702b79a168576c9b93d29f33ff1f3
   react-native-webrtc: 62659d18a13f6b50ad95c99a9a48cf9872a15815
   React-NativeModulesApple: 342e280bb9fc2aa5f61f6c257b309a86b995e12d
@@ -3815,7 +3815,7 @@ SPEC CHECKSUMS:
   RNQrGenerator: 60eab4f7c9e3f09db78029636fe356dca5cb585f
   RNReactNativeHapticFeedback: d39b9a5b334ce26f49ca6abe9eea8b3938532aee
   RNReanimated: be0bc51a01858c195f6df763ec2334b8bfe6f408
-  RNScreens: 49fd658291d2cb457b56aaaa063a0450f57c8ba6
+  RNScreens: eff474e98669c2a4dbe7e43ee9464682711182ea
   RNSentry: aac1c4a308e7fa4f3a684d6726dba7655c83bed3
   RNShare: f5de13630ef7082d870a4397e7e9402608b58c52
   RNSVG: bc7ccfe884848ac924d2279d9025d41b5f05cb0c
