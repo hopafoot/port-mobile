@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
   ) -> Bool {
+    // MARKER: Not from the react-native template
+    clearKeychainIfNecessary()
     // MARKER: From the react-native template
     let delegate = ReactNativeDelegate()
     let factory = RCTReactNativeFactory(delegate: delegate)
@@ -195,4 +197,26 @@ func cacheTriggerMessage (message: String) throws {
   if (sqlite3_finalize(statement) != SQLITE_OK) {
     throw DBError.CouldNotFinalize
   }
+}
+
+func clearKeychainIfNecessary() {
+    // Checks whether or not this is the first time the app is run
+    if !UserDefaults.standard.bool(forKey: "HAS_RUN_BEFORE") {
+        // Set the appropriate value so we don't clear next time the app is launched
+        UserDefaults.standard.set(true, forKey: "HAS_RUN_BEFORE")
+        
+        let secItemClasses = [
+            kSecClassGenericPassword,
+            kSecClassInternetPassword,
+            kSecClassCertificate,
+            kSecClassKey,
+            kSecClassIdentity
+        ]
+          
+        // Maps through all Keychain classes and deletes all items that match
+        for secItemClass in secItemClasses {
+            let spec = [kSecClass: secItemClass]
+            SecItemDelete(spec as CFDictionary)
+        }
+    }
 }
