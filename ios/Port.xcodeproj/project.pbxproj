@@ -31,6 +31,7 @@
 		AD498DBF2E3A7CC5002A5DB9 /* yap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD498DBD2E3A7CC5002A5DB9 /* yap.cpp */; };
 		AD71C80B2D3EEB1F00597A2C /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD71C80A2D3EEB1F00597A2C /* CallKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AD71C80D2D3EEB3700597A2C /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD71C80C2D3EEB3700597A2C /* Intents.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AD764AB92E41562000A16271 /* NativeEncryptedStorage.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD764AB82E41562000A16271 /* NativeEncryptedStorage.mm */; };
 		AD78F4752DA45C910031AEB1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD941C552DA4579600163C84 /* libcrypto.a */; };
 		AD78F4762DA45C910031AEB1 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD941C562DA4579600163C84 /* libssl.a */; };
 		AD78F4802DA45CCB0031AEB1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78F47D2DA45CBB0031AEB1 /* libcrypto.a */; };
@@ -144,6 +145,8 @@
 		AD4DD5992C4136C800671503 /* ExampleNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExampleNotification.apns; sourceTree = "<group>"; };
 		AD71C80A2D3EEB1F00597A2C /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		AD71C80C2D3EEB3700597A2C /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		AD764AB42E4155FA00A16271 /* NativeEncryptedStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeEncryptedStorage.h; sourceTree = "<group>"; };
+		AD764AB82E41562000A16271 /* NativeEncryptedStorage.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeEncryptedStorage.mm; sourceTree = "<group>"; };
 		AD78F4772DA45CA40031AEB1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		AD78F4782DA45CA40031AEB1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		AD78F47A2DA45CBB0031AEB1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
@@ -578,6 +581,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				3829492AB80DCA6450648613 /* PrivacyInfo.xcprivacy */,
+				AD764AB62E4155FA00A16271 /* NativeEncryptedStorage */,
 				ADDAE50D2DBAF6CB00DF75EF /* PortCallHelper */,
 				0F1818302DB7CC3E0053B66E /* PortMediaUploader */,
 				ADCCE26D2E3940F400030588 /* NativeProviders */,
@@ -669,6 +673,16 @@
 				AD4DD5992C4136C800671503 /* ExampleNotification.apns */,
 			);
 			path = portnse;
+			sourceTree = "<group>";
+		};
+		AD764AB62E4155FA00A16271 /* NativeEncryptedStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AD764AB82E41562000A16271 /* NativeEncryptedStorage.mm */,
+				AD764AB42E4155FA00A16271 /* NativeEncryptedStorage.h */,
+			);
+			name = NativeEncryptedStorage;
+			path = Port/NativeEncryptedStorage;
 			sourceTree = "<group>";
 		};
 		AD78F4792DA45CA40031AEB1 /* iphonesimulator */ = {
@@ -1556,6 +1570,7 @@
 				AD941C7B2DA4579600163C84 /* commonrand.cpp in Sources */,
 				AD941C7C2DA4579600163C84 /* x25519.cpp in Sources */,
 				AD941C7D2DA4579600163C84 /* NativeCryptoModule.cpp in Sources */,
+				AD764AB92E41562000A16271 /* NativeEncryptedStorage.mm in Sources */,
 				AD498DBE2E3A7CC5002A5DB9 /* aesgcm.cpp in Sources */,
 				AD498DBF2E3A7CC5002A5DB9 /* yap.cpp in Sources */,
 				AD941BBC2DA4577A00163C84 /* ed25519.cpp in Sources */,

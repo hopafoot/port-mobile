@@ -3797,7 +3797,7 @@ SPEC CHECKSUMS:
   React-timing: 42e8212c479d1e956d3024be0a07f205a2e34d9d
   React-utils: a185f723baa0c525c361e6c281a846d919623dbe
   ReactAppDependencyProvider: 8df342c127fd0c1e30e8b9f71ff814c22414a7c0
-  ReactCodegen: a4f0807b82750623c0a5b03f6871e2c66d9a09cd
+  ReactCodegen: 7e93d6a0588fc24d6fd9429527ab90dbc32974c5
   ReactCommon: ec1cdf708729338070f8c4ad746768a782fd9eb1
   RNAudioRecorderPlayer: fa079748b34d15cd3b7b6a5d47b286bae6d5d49b
   RNBackgroundFetch: 3e7aa5d4c28294cbc8e72e4eb99b5a54af685166
