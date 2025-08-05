@@ -1,6 +1,6 @@
-import EncryptedStorage from 'react-native-encrypted-storage';
+import NativeEncryptedStorage from '@specs/NativeEncryptedStorage';
 
-import {SLKey} from '../../../configs/paths';
+import {SLKey} from '@configs/paths';
 
 export interface ShortLivedKey {
   timestamp: string; // expiry timestamp
@@ -20,7 +20,7 @@ export interface ShortLivedKeyExpiryWithTokenExpiry {
 export async function saveShortLivedKeyRNSS(
   shortLivedKey: ShortLivedKey,
 ): Promise<void> {
-  await EncryptedStorage.setItem(SLKey, JSON.stringify(shortLivedKey));
+  NativeEncryptedStorage.setItem(SLKey, JSON.stringify(shortLivedKey));
 }
 
 /**
@@ -31,8 +31,8 @@ export async function readShortLivedKeyRNSS(): Promise<
   ShortLivedKey | undefined
 > {
   try {
-    const SL_Key: any = await EncryptedStorage.getItem(SLKey);
-    return JSON.parse(SL_Key);
+    const shortLivedKey: any = NativeEncryptedStorage.getItem(SLKey);
+    return shortLivedKey ? JSON.parse(shortLivedKey) : undefined;
   } catch (error) {
     console.log('Error reading ShortLivedKey from encrypted storage: ', error);
     return undefined;

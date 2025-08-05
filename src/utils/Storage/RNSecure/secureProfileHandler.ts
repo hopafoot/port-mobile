@@ -1,4 +1,4 @@
-import EncryptedStorage from 'react-native-encrypted-storage';
+import NativeEncryptedStorage from '@specs/NativeEncryptedStorage';
 
 import {sessionKey} from '@configs/paths';
 
@@ -11,8 +11,8 @@ import {FileAttributes} from '../StorageRNFS/interfaces';
  */
 export async function getProfileInfoRNSS(): Promise<ProfileInfo | undefined> {
   try {
-    const session: any = await EncryptedStorage.getItem(sessionKey);
-    return JSON.parse(session);
+    const session = NativeEncryptedStorage.getItem(sessionKey);
+    return session ? JSON.parse(session) : undefined;
   } catch {
     console.warn('Could not get profile from encrypted storage');
     return undefined;
@@ -27,14 +27,14 @@ export async function saveProfileInfoRNSS(profile: ProfileInfo): Promise<void> {
   if (!profile) {
     throw new Error('Profile info is undefined');
   }
-  await EncryptedStorage.setItem(sessionKey, JSON.stringify(profile));
+  NativeEncryptedStorage.setItem(sessionKey, JSON.stringify(profile));
 }
 
 /**
  * deletes profile info from file
  */
 export async function deleteProfileInfoRNSS(): Promise<void> {
-  await EncryptedStorage.clear();
+  await NativeEncryptedStorage.clear();
 }
 
 export interface ProfileInfoUpdate {
