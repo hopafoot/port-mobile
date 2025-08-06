@@ -6,9 +6,14 @@
 //
 
 #import "RCTPortMediaUploader.h"
+
+//The below imports should not be here. But everything else is failing.
+//TODO find a better option for these
 #import "PushKit/PKPushRegistry.h"
 #import "PushKit/PushKit.h"
 #import "React_RCTAppDelegate/RCTDefaultReactNativeFactoryDelegate.h"
+//
+
 #import "Port-Swift.h"
 
 @implementation NativePortMediaUploader {
