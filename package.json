@@ -40,7 +40,8 @@
     "ios": {
       "modulesProvider": {
         "NativeCryptoModule": "NativeCryptoModuleProvider",
-        "NativeCallHelperModule": "PortCallHelper"
+        "NativeCallHelperModule": "PortCallHelper",
+        "NativeMediaUploadModule": "NativePortMediaUploader"
       }
     }
   },
