@@ -12,7 +12,6 @@ import React_RCTAppDelegate
 import ReactAppDependencyProvider
 import Firebase
 import RNBootSplash
-import PushKit
 
 let GROUP_IDENTIFIER = "group.tech.numberless.port"
 let DATABASE_NAME = "numberless.db"
