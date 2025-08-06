@@ -1,6 +1,7 @@
+import {SLKey} from '@configs/paths';
+
 import NativeEncryptedStorage from '@specs/NativeEncryptedStorage';
 
-import {SLKey} from '@configs/paths';
 
 export interface ShortLivedKey {
   timestamp: string; // expiry timestamp

@@ -1,6 +1,7 @@
+import {sessionKey} from '@configs/paths';
+
 import NativeEncryptedStorage from '@specs/NativeEncryptedStorage';
 
-import {sessionKey} from '@configs/paths';
 
 import {FileAttributes} from '../StorageRNFS/interfaces';
 
