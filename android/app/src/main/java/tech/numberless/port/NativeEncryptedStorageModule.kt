@@ -12,7 +12,7 @@ class NativeEncryptedStorageModule(reactContext: ReactApplicationContext) : Nati
   companion object {
     val NATIVE_MODULE_NAME = "RNEncryptedStorage"
     val SHARED_PREFERENCES_FILENAME = "RN_ENCRYPTED_STORAGE_SHARED_PREF"
-    const val NAME = "NativeEncrypedStorage"
+    const val NAME = "NativeEncryptedStorage"
   }
 
   private var sharedPreferences: SharedPreferences? = null
